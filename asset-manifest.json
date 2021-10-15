@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/wbs-hackathon/build/static/css/main.11a0125b.chunk.css",
-    "main.js": "/wbs-hackathon/build/static/js/main.2f56c162.chunk.js",
-    "main.js.map": "/wbs-hackathon/build/static/js/main.2f56c162.chunk.js.map",
-    "runtime-main.js": "/wbs-hackathon/build/static/js/runtime-main.80f67de8.js",
-    "runtime-main.js.map": "/wbs-hackathon/build/static/js/runtime-main.80f67de8.js.map",
-    "static/js/2.6ea54a92.chunk.js": "/wbs-hackathon/build/static/js/2.6ea54a92.chunk.js",
-    "static/js/2.6ea54a92.chunk.js.map": "/wbs-hackathon/build/static/js/2.6ea54a92.chunk.js.map",
-    "static/js/3.b4569010.chunk.js": "/wbs-hackathon/build/static/js/3.b4569010.chunk.js",
-    "static/js/3.b4569010.chunk.js.map": "/wbs-hackathon/build/static/js/3.b4569010.chunk.js.map",
-    "index.html": "/wbs-hackathon/build/index.html",
-    "static/css/main.11a0125b.chunk.css.map": "/wbs-hackathon/build/static/css/main.11a0125b.chunk.css.map",
-    "static/js/2.6ea54a92.chunk.js.LICENSE.txt": "/wbs-hackathon/build/static/js/2.6ea54a92.chunk.js.LICENSE.txt"
+    "main.css": "/wbs-hackathon/static/css/main.11a0125b.chunk.css",
+    "main.js": "/wbs-hackathon/static/js/main.2f56c162.chunk.js",
+    "main.js.map": "/wbs-hackathon/static/js/main.2f56c162.chunk.js.map",
+    "runtime-main.js": "/wbs-hackathon/static/js/runtime-main.601dcba9.js",
+    "runtime-main.js.map": "/wbs-hackathon/static/js/runtime-main.601dcba9.js.map",
+    "static/js/2.6ea54a92.chunk.js": "/wbs-hackathon/static/js/2.6ea54a92.chunk.js",
+    "static/js/2.6ea54a92.chunk.js.map": "/wbs-hackathon/static/js/2.6ea54a92.chunk.js.map",
+    "static/js/3.b4569010.chunk.js": "/wbs-hackathon/static/js/3.b4569010.chunk.js",
+    "static/js/3.b4569010.chunk.js.map": "/wbs-hackathon/static/js/3.b4569010.chunk.js.map",
+    "index.html": "/wbs-hackathon/index.html",
+    "static/css/main.11a0125b.chunk.css.map": "/wbs-hackathon/static/css/main.11a0125b.chunk.css.map",
+    "static/js/2.6ea54a92.chunk.js.LICENSE.txt": "/wbs-hackathon/static/js/2.6ea54a92.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.80f67de8.js",
+    "static/js/runtime-main.601dcba9.js",
     "static/js/2.6ea54a92.chunk.js",
     "static/css/main.11a0125b.chunk.css",
     "static/js/main.2f56c162.chunk.js"

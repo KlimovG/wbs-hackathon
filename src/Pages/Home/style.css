@@ -1,0 +1,7 @@
+.filter {
+  max-width: 300px;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import './style.css'
 
 
@@ -16,6 +17,8 @@ const MainPage = () => {
   const [isSortByDateUp, setIsSortByDateUp] = useState(false);
   const [isSortByDateDown, setIsSortByDateDown] = useState(false);
   const [isSortByUser, setIsSortByUser] = useState(false);
+  const [isSortByText, setIsSortByText] = useState(false);
+  const [search, setSearch] = useState("")
   const { id } = useParams();
 
   function sorting() {
@@ -44,15 +47,35 @@ const MainPage = () => {
         return 1
       }
       return 0
+
     })
     return sortedMessages
   }
 
-  // function sortByUser(data) {
-  //   const sortedMessages = data.filter(message => message.userId.name === "Gilly Diviny")
-  //   return sortedMessages
+  function getSearchValue(e) {
+    setSearch(e.target.value)
+  }
 
-  // }
+  function searchByUser(data) {
+    const value = search;
+    const filteredData = data.filter(message => {
+      console.log(message.userId.name === value)
+      return message.userId.name === value
+    });
+    return filteredData;
+  }
+  function searchByText(data) {
+    const value = search;
+    const filteredData = data.filter(message => {
+      const arrayOfText = message.text.split(" ").some(word => word === value)
+      if (arrayOfText) {
+        return message
+      }
+      return
+    });
+    console.log(filteredData)
+    return filteredData;
+  }
 
   useEffect(() => {
     getAllMessages()
@@ -78,8 +101,14 @@ const MainPage = () => {
 
         } else if (isSortByDateDown) {
           setMessages(() => sortByDateDown(data))
+        } else if (isSortByUser) {
+          setMessages(() => searchByUser(data))
+        } else if (isSortByText) {
+          setMessages(() => searchByText(data))
+        } else {
+          setMessages(data)
+
         }
-        setMessages(data)
       })
   }
 
@@ -90,23 +119,55 @@ const MainPage = () => {
         <Button onClick={() => {
           setIsSortByDateUp(true)
           setIsSortByDateDown(false)
-          // sortByUser(false)
+          setIsSortByUser(false)
+          setIsSortByText(false)
 
           sorting()
         }} variant="contained">Sort by date up</Button>
         <Button onClick={() => {
           setIsSortByDateDown(true)
           setIsSortByDateUp(false)
-          // sortByUser(false)
+          setIsSortByUser(false)
+          setIsSortByText(false)
 
           sorting()
         }} variant="contained">Sort by date down</Button>
-        {/* <Button onClick={() => {
-          // sortByUser(true)
+        <TextField
+          id="outlined-basic"
+          label="By User"
+          variant="outlined"
+          onChange={(e) => getSearchValue(e)}
+        />
+        <Button onClick={() => {
+          setIsSortByUser(true)
           setIsSortByDateUp(false)
           setIsSortByDateDown(false)
+          setIsSortByText(false)
+
           sorting()
-        }} variant="contained">Sort by user</Button> */}
+        }} variant="contained">Sort by user</Button>
+        <TextField
+          id="outlined-basic"
+          label="By text"
+          variant="outlined"
+          onChange={(e) => getSearchValue(e)}
+        />
+        <Button onClick={() => {
+          setIsSortByUser(false)
+          setIsSortByDateUp(false)
+          setIsSortByDateDown(false)
+          setIsSortByText(true)
+
+          sorting()
+        }} variant="contained">Sort by text</Button>
+        <Button onClick={() => {
+          setIsSortByUser(false)
+          setIsSortByDateUp(false)
+          setIsSortByDateDown(false)
+          setIsSortByText(false)
+
+          sorting()
+        }} color="error" variant="contained">Reset</Button>
       </Stack>
       <Container maxWidth="sm">
         {

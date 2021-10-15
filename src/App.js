@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import CssBaseline from '@mui/material/CssBaseline';
 import MainPage from './Pages/Home'
 import MessagePage from './Pages/Message-page'
+import Users from './Pages/Users'
+import UserPage from './Pages/UserPage'
 
 
 
@@ -18,9 +20,15 @@ function App() {
         <MainPage />
 
       </Route>
-      <Route path="/:id">
+      <Route path="/messages=:id">
         <MessagePage />
 
+      </Route>
+      <Route path="/users/:id">
+        <UserPage />
+      </Route>
+      <Route exact path="/users/">
+        <Users />
       </Route>
     </Router>
   );
